@@ -1,0 +1,21 @@
+import express from "express";
+import { signup, login, logout, refreshToken } from "../controllers/auth.controllers.js";
+
+const router = express.Router();
+
+router.post("/signup", signup);
+
+router.post("/login", login);
+
+router.post("/logout", logout);
+
+router.post("/refresh-token", refreshToken);
+
+//TODO: Implement protected route middleware
+// router.get("/profile", protectedRoute, getProfile);
+
+
+
+export default router;
+
+
