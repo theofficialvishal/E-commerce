@@ -8,6 +8,9 @@ import paymentRoutes from "./routes/payment.routes.js";
 import analyticsRoutes from './routes/analytics.route.js'
 import { connectDB } from "./lib/db.js";
 import cookieParser from "cookie-parser";
+import path from "path";
+
+const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -23,6 +26,14 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/coupons", couponRoutes);
 app.use('/api/payments', paymentRoutes)
 app.use('/api/analytics', analyticsRoutes)
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "../Frontend", "dist", "index.html"));
+    });
+}
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
