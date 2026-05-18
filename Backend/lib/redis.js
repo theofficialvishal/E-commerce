@@ -2,13 +2,13 @@ import Redis from "ioredis";
 import dotenv from "dotenv";
 dotenv.config();
 
-const client = new Redis(process.env.UPSTASH_REDIS_URL)
+const redis = new Redis(process.env.UPSTASH_REDIS_URL)
 
-client.on("connect", () => {
+redis.on("connect", () => {
     console.log("Redis connected");
 })
-client.on("error", (err) => {
+redis.on("error", (err) => {
     console.log("Redis error:", err);
 })
 
-export default client;
+export default redis;
