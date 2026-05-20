@@ -5,33 +5,38 @@ A modern, fully functional E-Commerce web application built with the **MERN** st
 ## ✨ Features
 
 ### 🔐 Authentication & Security
+
 - **JWT & Refresh Tokens**: Secure user sessions using JSON Web Tokens.
 - **Redis Caching**: Efficient storage and management of refresh tokens for fast validation.
 - **Role-Based Access**: Specialized routes and views for `Admin` and `Customer` roles.
 
 ### 🛍️ User Experience
+
 - **Responsive UI/UX**: Beautiful, mobile-friendly design built with Tailwind CSS.
 - **Framer Motion**: Smooth page transitions and micro-animations.
 - **Product Browsing**: View products by categories, featured products, and recommendations.
 - **Shopping Cart**: Real-time cart state management using **Zustand**. Add, update quantities, or remove items easily.
-- **Dynamic Coupon System**: 
+- **Dynamic Coupon System**:
   - Apply discount codes during checkout.
   - Users automatically receive a 10% discount coupon on their next purchase if they spend over $200!
 
 ### 💳 Payment Integration
+
 - **Stripe Checkout**: Secure, enterprise-grade payment processing.
 - **Order Tracking**: Automatically registers orders and clears the cart upon a successful transaction.
 
 ### 🛡️ Admin Dashboard
+
 - **Analytics & Graphs**: View Total Users, Total Products, Total Sales, and Total Revenue.
 - **Daily Sales Chart**: Interactive line charts built with **Recharts** to visualize daily sales data.
-- **Product Management**: 
+- **Product Management**:
   - Create new products with image uploads powered by **Cloudinary**.
   - Delete products and easily toggle their "Featured" status.
 
 ## 🛠️ Tech Stack
 
 **Frontend:**
+
 - React 18 (Vite)
 - Tailwind CSS
 - Zustand (State Management)
@@ -41,6 +46,7 @@ A modern, fully functional E-Commerce web application built with the **MERN** st
 - Axios
 
 **Backend:**
+
 - Node.js & Express.js
 - MongoDB & Mongoose
 - Redis (Upstash) for caching & tokens
@@ -51,22 +57,27 @@ A modern, fully functional E-Commerce web application built with the **MERN** st
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 Make sure you have Node.js and MongoDB installed on your system. You will also need accounts for Stripe, Cloudinary, and Upstash (Redis).
 
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/theofficialvishal/E-commerce.git
    cd E-commerce
    ```
 
 2. **Backend Setup:**
+
    ```bash
    cd Backend
    npm install
    ```
+
    Create a `.env` file in the `Backend` directory and add your credentials:
+
    ```env
    PORT=5000
    MONGO_URI=your_mongodb_uri
@@ -93,12 +104,14 @@ Make sure you have Node.js and MongoDB installed on your system. You will also n
 ### Running the App
 
 1. **Start the Backend server:**
+
    ```bash
    cd Backend
    npm run dev
    ```
 
 2. **Start the Frontend server:**
+
    ```bash
    cd Frontend
    npm run dev
@@ -112,19 +125,22 @@ You can easily run this application using Docker. This is especially useful for 
 
 1. **Build the Docker Image:**
    Ensure you are in the root directory of the project and run:
+
    ```bash
    docker build -t e-commerce-app .
    ```
 
 2. **Run the Docker Container:**
    You need to pass the required environment variables. Create a `.env` file in the root directory containing your backend environment variables, and run:
+
    ```bash
    docker run -p 4000:4000 --env-file .env e-commerce-app
    ```
-   *(Note: The Docker container exposes port 4000 by default. Make sure to map it accordingly.)*
+
+   _(Note: The Docker container exposes port 4000 by default. Make sure to map it accordingly.)_
 
 3. **Open your browser:** Navigate to `http://localhost:4000`.
 
 ---
 
-*Designed and Developed by [Vishal]*
+_Designed and Developed by [Vishal]_
