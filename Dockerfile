@@ -16,6 +16,10 @@ RUN cd Frontend && npm install
 COPY . .
 
 # Build the frontend
+# We define ARG and ENV so the build process has access to Vite environment variables
+ARG VITE_STRIPE_PUBLISHABLE_KEY
+ENV VITE_STRIPE_PUBLISHABLE_KEY=$VITE_STRIPE_PUBLISHABLE_KEY
+
 RUN cd Frontend && npm run build
 
 # Set working directory to the Backend where server.js is located
