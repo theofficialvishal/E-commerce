@@ -106,6 +106,25 @@ Make sure you have Node.js and MongoDB installed on your system. You will also n
 
 3. **Open your browser:** Navigate to `http://localhost:5173`.
 
+### 🐳 Running with Docker
+
+You can easily run this application using Docker. This is especially useful for deployment (e.g., on Render) or if you want to avoid manual setup.
+
+1. **Build the Docker Image:**
+   Ensure you are in the root directory of the project and run:
+   ```bash
+   docker build -t e-commerce-app .
+   ```
+
+2. **Run the Docker Container:**
+   You need to pass the required environment variables. Create a `.env` file in the root directory containing your backend environment variables, and run:
+   ```bash
+   docker run -p 4000:4000 --env-file .env e-commerce-app
+   ```
+   *(Note: The Docker container exposes port 4000 by default. Make sure to map it accordingly.)*
+
+3. **Open your browser:** Navigate to `http://localhost:4000`.
+
 ---
 
 *Designed and Developed by [Vishal]*
